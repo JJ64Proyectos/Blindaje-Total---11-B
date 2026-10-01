@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Caja Fuerte Digital</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        html {
+            background-image: url('../assets/fondo.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+        }
+
+        .contacto-container {
+            padding: 150px 0 80px 0;
+            text-align: center;
+        }
+
+        .contacto-caja {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .contacto-caja h2 {
+            margin-bottom: 25px;
+            color: #323337;
+        }
+
+        .lista-contacto {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .lista-contacto li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            color: #444;
+        }
+
+        .lista-contacto li img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+
+        .lista-contacto a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .lista-contacto a:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header-empresa">
+        <div class="menu container">
+            <a href="BLINDAJE TOTAL.html" class="logo">
+                <img src="assets/logo-blindaje.png" alt="Logo Caja Fuerte Digital">
+            </a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="assets/menu.png" class="menu-icono" alt="Menú">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="BLINDAJE TOTAL.html">Inicio</a></li>
+                    <li><a href="empresa.html">Nuestra Empresa</a></li>
+                    <li><a href="Tienda.html">Productos</a></li>
+                    <li><a href="app.html">Aplicaciones</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contacto-container container">
+        <div class="contacto-caja">
+            <h2>Contáctanos</h2>
+            <p>Puedes escribirnos a través de nuestras redes sociales o canales de atención directa:</p>
+            <br>
+            <ul class="lista-contacto">
+                <li><img src="assets/whatsapp.png" alt="WhatsApp"> WhatsApp: <a href="https://wa.me/1234567890">+1 234 567 890</a></li>
+                <li><img src="assets/telefono.png" alt="Teléfono"> Teléfono: <span>+1 234 567 890</span></li>
+                <li><img src="assets/instagram.png" alt="Instagram"> Instagram: <a href="#">@CajaFuerteDigital</a></li>
+                <li><img src="assets/facebook.png" alt="Facebook"> Facebook: <a href="#">Caja Fuerte Digital</a></li>
+                <li><img src="assets/twitter.png" alt="Twitter"> Twitter (X): <a href="#">@CajaDigital</a></li>
+                <li><img src="assets/email.png" alt="Email"> Email: <a href="mailto:contacto@cajafuerte.com">contacto@cajafuerte.com</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="BLINDAJE TOTAL.html">Inicio</a></li>
+                    <li><a href="Tienda.html">Productos</a></li>
+                    <li><a href="app.html">Aplicaciones</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Soporte</h3>
+                <ul>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                    <li><a href="#">Preguntas</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const menu = document.querySelector('.menu');
+            if (window.scrollY > 50) {
+                menu.classList.add('fijo');
+            } else {
+                menu.classList.remove('fijo');
+            }
+        });
+    </script>
+</body>
+
+</html>
