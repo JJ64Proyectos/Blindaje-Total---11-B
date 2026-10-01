@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Mochiy Pop One', sans-serif;
+    overflow-x: hidden; /* Evita que la pantalla se mueva hacia los lados */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Margen de seguridad para pantallas medianas */
+}
+
+.header {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../assets/fondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    position: fixed; /* Cambiado de absolute a fixed para que siga la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0; /* Ajustamos el padding */
+    z-index: 1000;   /* Asegura que el menú siempre quede por encima de las imágenes */
+    transition: all 0.4s ease; /* Transición suave para cuando cambie al bajar */
+}
+
+/* NUEVA CLASE: Se activará con JavaScript automáticamente al bajar la página */
+.menu.fijo {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro elegante para que se lea bien al bajar */
+    padding: 10px 0; /* Se vuelve un poco más delgada al bajar para no robar espacio */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Una pequeña sombra debajo */
+}
+
+.logo {
+    color: #fffdfc;
+    font-size: 25px;
+    font-weight: 800;
+    /* --- Nuevas propiedades para la imagen --- */
+    display: flex;
+    align-items: center;
+}
+
+/* Estado normal */
+.logo img {
+    height: 60px;
+    width: auto;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición con un leve rebote */
+}
+
+/* Estado al pasar el cursor */
+.logo img:hover {
+    transform: rotate(-15deg) scale(1.05); /* Gira 15 grados y crece un poco */
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #2b61ac;
+    display: block;
+    font-weight: 600;
+    position: relative;
+}
+
+.menu .navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;        /* Controla qué tan cerca está la línea del texto */
+    left: 50%;          /* Iniciamos en el centro para el efecto de expansión */
+    width: 0;           /* Empezamos con ancho cero para que no se vea */
+    height: 3px;        /* El grosor de la línea */
+    background-color: #2b61ac; /* El color marrón de tu diseño */
+    transition: width 0.3s ease, left 0.3s ease; /* Animación fluida */
+}
+
+.menu .navbar ul li a:hover::after {
+    width: 70%;         /* La línea ocupará el 70% del ancho del texto (puedes usar 100%) */
+    left: 15%;          /* Centra la línea (si usas width 100%, pon left 0%) */
+}
+
+.menu .navbar ul li a:hover {
+    color: #5eb4ff;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-content {
+    text-align: center; /* Corregido: antes decía 75px */
+    width: 100%;
+    color: #f9fafc;
+    text-transform: uppercase;
+}
+
+.header-content h1 {
+    font-size: 55px;
+    line-height: 70px;
+    margin-bottom: 20px;
+}
+
+.header-content p {
+    font-size: 16px;
+    color: #c5c5c5;
+    max-width: 700px;
+    margin: 0 auto 25px auto; /* Centra el bloque de texto */
+    line-height: 1.6;
+    text-transform: none; /* Evita que el texto plano salga en mayúsculas fijas */
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #ce967b;
+    color: #f9fafc;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.btn-1:hover {
+    background-color: #ebad8d;
+}
+
+.coffee {
+    padding: 100px 0;
+    background-color: #e1e2e6;
+}
+
+.coffee-content {
+    text-align: center;
+}
+
+.coffee-content h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323337;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.txt-p {
+    font-size: 16px;
+    color: #414247;
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+}
+
+.coffee-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.coffee-1 {
+    padding: 0 25px;
+    flex: 1;
+}
+
+.coffee-1 img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.coffee-1 h3 {
+    color: #323337;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.services {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../assets/fondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+}
+
+.services-content {
+    text-align: center; /* Corregido: antes decía 55px */
+    color: #f9fafc;
+}
+
+.services-content h2 {
+    color: #f9fafc;
+    margin-bottom: 50px;
+}
+
+.services-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.services-1 {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.services-1 img {
+    width: 70px; /* Corregido: 25px era demasiado pequeño */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.services-1 h3 {
+    color: #eaccb3;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.services-content p {
+    font-size: 16px;
+    color: #c5c5c5;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+/* Secciones de cuadrícula General corregidas */
+.general {
+    display: flex;
+    min-height: 50vh;
+}
+
+.general-1 {
+    width: 50%;
+    padding: 80px;
+    background-color: #e1e2e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.general-2, .general-3 {
+    width: 50%;
+    background-image: url(../assets/seguridad.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2 {
+    font-size: 45px;
+    line-height: 55px;
+    color: #323337;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #414247;
+    line-height: 1.6;
+}
+
+.blog {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.blog h2 {
+    margin-bottom: 10px;
+}
+
+.blog-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.blog-1 {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.blog-1 img {
+    width: 100%;
+    max-width: 220px;
+    height: 150px;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.blog-1 h3 {
+    font-size: 20px;
+    color: #323337;
+    margin-bottom: 10px;
+}
+
+.footer {
+    padding: 60px 0;
+    background-color: #000000;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.link h3 {
+    font-size: 18px;
+    color: #f9fafc;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.link a {
+    font-size: 16px;
+    color: #c5c5c5;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.link a:hover {
+    color: #ce967b;
+}
+
