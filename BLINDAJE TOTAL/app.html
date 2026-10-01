@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestras Aplicaciones - Caja Fuerte Digital</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        /* Fondo PNG aplicado directamente a la etiqueta html para escroleo natural */
+        html {
+            background-image: url('../assets/fondo.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+        }
+
+        /* Contenedor principal */
+        .apps-container {
+            padding: 150px 0 80px 0;
+            text-align: center;
+        }
+
+        .logo-centrado {
+            margin-bottom: 30px;
+        }
+
+        .logo-centrado img {
+            max-width: 260px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-centrado img:hover {
+            transform: scale(1.05);
+        }
+
+        .apps-introduccion {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .apps-introduccion h1 {
+            font-size: 28px;
+            color: #323337;
+            margin-bottom: 12px;
+        }
+
+        .apps-introduccion p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Estructura de Tabla */
+        .apps-tabla {
+            display: table;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 25px;
+        }
+
+        .apps-fila {
+            display: table-row;
+        }
+
+        /* Estilos unificados para tarjetas (div o enlace) */
+        .app-cuadro, a.app-cuadro {
+            display: table-cell;
+            width: 33.33%;
+            background-color: rgba(249, 249, 249, 0.95);
+            border: 2px solid transparent;
+            border-radius: 14px;
+            padding: 30px 20px;
+            text-align: center;
+            vertical-align: top;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                        border-color 0.3s ease, 
+                        box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .app-cuadro:hover, a.app-cuadro:hover {
+            transform: scale(1.06);
+            border-color: #3498db;
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+            cursor: pointer;
+        }
+
+        .app-cuadro img, a.app-cuadro img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .app-cuadro h3, a.app-cuadro h3 {
+            font-size: 18px;
+            color: #323337;
+            margin-bottom: 10px;
+        }
+
+        .app-cuadro p, a.app-cuadro p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .apps-tabla, .apps-fila, .app-cuadro, a.app-cuadro {
+                display: block;
+                width: 100%;
+            }
+            .app-cuadro, a.app-cuadro {
+                margin-bottom: 25px;
+            }
+            .apps-container {
+                padding-top: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header-empresa">
+        <div class="menu container">
+            <a href="BLINDAJE TOTAL.html" class="logo">
+                <img src="assets/logo-blindaje.png" alt="Logo Caja Fuerte Digital">
+            </a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="assets/menu.png" class="menu-icono" alt="Menú">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="BLINDAJE TOTAL.html">Inicio</a></li>
+                    <li><a href="empresa.html">Nuestra Empresa</a></li>
+                    <li><a href="Tienda.html">Productos</a></li>
+                    <li><a href="app.html">Aplicaciones</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="apps-container container">
+        
+        <div class="logo-centrado">
+            <img src="assets/logo-blindaje.png" alt="Logo Central Blindaje Total">
+        </div>
+
+        <div class="apps-introduccion">
+            <h1>Ecosistema de Aplicaciones Virtuales</h1>
+            <p>En Blindaje Total desarrollamos software nativo diseñado para sincronizarse directamente con tus sistemas físicos de seguridad. Controla tus accesos, monitorea registros en tiempo real y gestiona tus contraseñas encriptadas desde nuestra suite de aplicaciones de alta fidelidad informática.</p>
+        </div>
+
+        <div class="apps-tabla">
+            
+            <div class="apps-fila">
+                <a href="IRONVAULT.html" class="app-cuadro">
+                    <img src="assets/logo-IRONVAULT.png" alt="Producto">
+                    <h3>IronVault</h3>
+                    <p>Sincronización total mediante Bluetooth para la apertura, control remoto y gestión inmediata de alertas de tu caja fuerte IronVault.</p>
+                </a>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>CyberGuard Mobile</h3>
+                    <p>Monitoreo perimetral y generación de tokens de acceso dinámicos que caducan cada 30 segundos.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>BioLink Access</h3>
+                    <p>Administración remota de las huellas dactilares permitidas en tus cerraduras biométricas instaladas.</p>
+                </div>
+            </div>
+
+            <div class="apps-fila">
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>PassVault Lock</h3>
+                    <p>Gestor local encriptado para almacenar contraseñas maestras bajo llaves de bases de datos blindadas.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>WiFi Safe Link</h3>
+                    <p>Enlace de datos dedicado que conecta tus dispositivos con la red doméstica usando encriptación de grado militar.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Alert Beacon</h3>
+                    <p>Sistema de notificaciones push instantáneas en caso de vibraciones violentas o intentos erróneos de clave.</p>
+                </div>
+            </div>
+
+            <div class="apps-fila">
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>SQL Shield</h3>
+                    <p>Protección en tiempo real para bases de datos ante inyecciones o intentos maliciosos de lectura externa.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>RFID Master Key</h3>
+                    <p>Programador virtual para tarjetas magnéticas y llaveros de proximidad desde la comodidad de tu smartphone.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Solenoide Pulse</h3>
+                    <p>Aplicación de diagnóstico técnico para medir el pulso eléctrico y respuesta de relés y pernos automáticos.</p>
+                </div>
+            </div>
+
+            <div class="apps-fila">
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Titan Cloud Backup</h3>
+                    <p>Respaldo automatizado de bitácoras de uso en la nube cifrada privada de nuestra organización.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Matrix Code</h3>
+                    <p>Generador de combinaciones aleatorias complejas para actualizar periódicamente tus teclados 4x4.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Chronos Auditor</h3>
+                    <p>Historial inalterable con gráficas precisas sobre las horas de apertura y cierre de las bóvedas corporativas.</p>
+                </div>
+            </div>
+
+            <div class="apps-fila">
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>OLED Smart Display</h3>
+                    <p>Personalizador de interfaces y mensajes para las pantallas físicas instaladas en tus sistemas.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Proximity Radar</h3>
+                    <p>Mapeo inteligente y alertas sonoras perimetrales vinculadas a los sensores de presencia infrarrojos.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Panic Trigger</h3>
+                    <p>Botón de pánico digital de alta prioridad que alerta a las autoridades locales de forma silenciosa.</p>
+                </div>
+            </div>
+
+            <div class="apps-fila">
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Omega Security Core</h3>
+                    <p>Centralizador de amenazas encargado del bloqueo temporal automático tras vulneraciones encadenadas.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Power Check</h3>
+                    <p>Medidor remoto del nivel de batería y estado de los sistemas de alimentación de respaldo.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Alpha Node</h3>
+                    <p>Consola interna para programadores que permite revisar líneas de comandos y registros de depuración.</p>
+                </div>
+            </div>
+
+            <div class="apps-fila">
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Camouflage Stealth</h3>
+                    <p>Oculta el icono de tus aplicaciones de seguridad bajo interfaces simuladas de calculadoras o utilidades.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Quantum Key</h3>
+                    <p>Cifrado avanzado de extremo a extremo para las transmisiones inalámbricas de datos críticos.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Locksmith Remote</h3>
+                    <p>Asistencia remota encriptada y desbloqueo de emergencia certificado por nuestros ingenieros.</p>
+                </div>
+            </div>
+
+            <div class="apps-fila">
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>MultiVault Manager</h3>
+                    <p>Permite administrar múltiples cajas fuertes y bóvedas digitales distribuidas desde una sola pantalla.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Sentinel Eye</h3>
+                    <p>Integración de transmisión de video en tiempo real para cajas equipadas con módulos de microcámara.</p>
+                </div>
+                <div class="app-cuadro">
+                    <img src="assets/logo-blindaje.png" alt="Producto">
+                    <h3>Audit Scan Pro</h3>
+                    <p>Herramienta automática que analiza vulnerabilidades en tus contraseñas y configuraciones de red.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="BLINDAJE TOTAL.html">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="Tienda.html">Productos</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Soporte</h3>
+                <ul>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                    <li><a href="#">Preguntas</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const menu = document.querySelector('.menu');
+            if (window.scrollY > 50) {
+                menu.classList.add('fijo');
+            } else {
+                menu.classList.remove('fijo');
+            }
+        });
+    </script>
+</body>
+</html>

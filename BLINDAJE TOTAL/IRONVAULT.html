@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>IronVault - Panel de Control</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            background: #000;
+            background-image: url('assets/fondo-tecnologico.png');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .interfaz-grid {
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            height: 100vh; position: relative;
+        }
+
+        /* Logos en esquinas */
+        .logo-esquina { position: absolute; top: 20px; width: 120px; transition: 0.3s ease; }
+        .logo-esquina:hover { transform: scale(1.1); }
+        .logo-blindaje { left: 20px; }
+        .logo-ironvault { right: 20px; }
+
+        /* Contenedor de botones */
+        .botones-container {
+            display: flex; gap: 40px; align-items: flex-end;
+        }
+
+        /* Estilo base de los botones */
+        .btn {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-decoration: none; font-weight: bold; color: white;
+            transition: 0.3s;
+        }
+
+        /* Imagen arriba del botón */
+        .btn img {
+            width: 80px; height: 80px; margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        /* La "plataforma" o fondo del botón */
+        .fondo-btn {
+            background: rgba(52, 152, 219, 0.4); 
+            border: 2px solid #3498db;
+            border-radius: 50% / 100%;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .btn-grande .fondo-btn { width: 220px; height: 90px; }
+        .btn-peque .fondo-btn { width: 160px; height: 70px; }
+
+        .btn:hover img { transform: translateY(-10px); }
+        .btn:hover .fondo-btn { background: rgba(52, 152, 219, 0.7); }
+
+        .menu-btn { position: absolute; bottom: 20px; left: 20px; width: 50px; }
+    </style>
+</head>
+<body>
+
+    <div class="interfaz-grid">
+        <a href="BLINDAJE TOTAL.html">
+            <img src="assets/logo-blindaje.png" class="logo-esquina logo-blindaje" alt="Blindaje Total">
+        </a>
+        <img src="assets/logo-IRONVAULT.png" class="logo-esquina logo-ironvault" alt="IronVault">
+
+        <div class="botones-container">
+            <a href="Tienda.html" class="btn btn-peque">
+                <img src="assets/icon-tienda.png">
+                <div class="fondo-btn">TIENDA</div>
+            </a>
+            
+            <a href="#" class="btn btn-grande">
+                <img src="assets/icon-boveda.png">
+                <div class="fondo-btn">MIS BÓVEDAS</div>
+            </a>
+            
+            <a href="#" class="btn btn-grande">
+                <img src="assets/icon-caja.png">
+                <div class="fondo-btn">MI CAJA VIRTUAL</div>
+            </a>
+            
+            <a href="#" class="btn btn-peque">
+                <img src="assets/icon-config.png">
+                <div class="fondo-btn">CONFIG</div>
+            </a>
+        </div>
+        
+        <img src="assets/menu.png" class="menu-btn" alt="Menú">
+    </div>
+
+</body>
+</html>
