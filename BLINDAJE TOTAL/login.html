@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>IronVault - Acceso Restringido</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            background: #000;
+            background-image: url('assets/fondo-tecnologico.png');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .interfaz-grid {
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            height: 100vh; position: relative;
+        }
+
+        /* Logos en esquinas (Idénticos a tu panel) */
+        .logo-esquina { position: absolute; top: 20px; width: 120px; transition: 0.3s ease; }
+        .logo-esquina:hover { transform: scale(1.1); }
+        .logo-blindaje { left: 20px; }
+        .logo-ironvault { right: 20px; }
+
+        /* Contenedor del Login con estética IronVault */
+        .login-container {
+            background: rgba(0, 0, 0, 0.75);
+            border: 2px solid #3498db;
+            border-radius: 15px;
+            padding: 35px 40px;
+            width: 320px;
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.4);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            font-size: 22px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            color: #3498db;
+            font-size: 12px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 9px;
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            color: #fff;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            background: rgba(52, 152, 219, 0.3);
+            box-shadow: 0 0 10px #3498db;
+        }
+
+        /* Botón de acceso con el estilo de tus plataformas */
+        .btn-login {
+            background: rgba(52, 152, 219, 0.5);
+            border: 2px solid #3498db;
+            color: white;
+            padding: 11px;
+            width: 100%;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        .btn-login:hover {
+            background: rgba(52, 152, 219, 0.9);
+            box-shadow: 0 0 15px #3498db;
+            transform: translateY(-2px);
+        }
+
+        /* Botón secundario de Nuevo Usuario */
+        .btn-nuevo-usuario {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            background: transparent;
+            border: 1px dashed #3498db;
+            color: #3498db;
+            padding: 9px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .btn-nuevo-usuario:hover {
+            background: rgba(52, 152, 219, 0.2);
+            color: #fff;
+            border-color: #fff;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
+        }
+
+        .menu-btn { position: absolute; bottom: 20px; left: 20px; width: 50px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="interfaz-grid">
+        <!-- Logotipos en las esquinas igual que tu panel -->
+        <a href="BLINDAJE TOTAL.html">
+            <img src="assets/logo-blindaje.png" class="logo-esquina logo-blindaje" alt="Blindaje Total">
+        </a>
+        <img src="assets/logo-IRONVAULT.png" class="logo-esquina logo-ironvault" alt="IronVault">
+
+        <!-- Caja de Inicio de Sesión -->
+        <div class="login-container">
+            <h2>ACCESO RESTRINGIDO</h2>
+            
+            <!-- Formulario listo para conectarse después con el archivo PHP -->
+            <form action="procesar_login.php" method="POST">
+                
+                <!-- CASILLA DE CORREO (Agregada arriba del usuario) -->
+                <div class="input-group">
+                    <label>CORREO</label>
+                    <input type="email" name="correo" required autocomplete="off">
+                </div>
+
+                <!-- CASILLA DE USUARIO -->
+                <div class="input-group">
+                    <label>USUARIO</label>
+                    <input type="text" name="usuario" required autocomplete="off">
+                </div>
+                
+                <!-- CASILLA DE CONTRASEÑA -->
+                <div class="input-group">
+                    <label>CONTRASEÑA</label>
+                    <input type="password" name="password" required>
+                </div>
+
+                <!-- BOTÓN DE INGRESAR -->
+                <button type="submit" class="btn-login">INGRESAR</button>
+
+                <!-- BOTÓN DE NUEVO USUARIO (Agregado abajo de ingresar) -->
+                <a href="registro.php" class="btn-nuevo-usuario">NUEVO USUARIO</a>
+            </form>
+        </div>
+        
+        <img src="assets/menu.png" class="menu-btn" alt="Menú">
+    </div>
+
+</body>
+</html>
