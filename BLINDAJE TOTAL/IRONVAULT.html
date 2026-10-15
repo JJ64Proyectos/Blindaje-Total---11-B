@@ -20,14 +20,14 @@
         }
 
         /* Logos en esquinas */
-        .logo-esquina { position: absolute; top: 20px; width: 120px; transition: 0.3s ease; }
+        .logo-esquina { position: absolute; top: 20px; width: 120px; transition: 0.3s ease; cursor: pointer; }
         .logo-esquina:hover { transform: scale(1.1); }
         .logo-blindaje { left: 20px; }
         .logo-ironvault { right: 20px; }
 
-        /* Contenedor de botones */
+        /* Contenedor de botones (botones grandes separados moderadamente) */
         .botones-container {
-            display: flex; gap: 40px; align-items: flex-end;
+            display: flex; gap: 30px; align-items: flex-end;
         }
 
         /* Estilo base de los botones */
@@ -52,12 +52,156 @@
         }
 
         .btn-grande .fondo-btn { width: 220px; height: 90px; }
-        .btn-peque .fondo-btn { width: 160px; height: 70px; }
 
         .btn:hover img { transform: translateY(-10px); }
         .btn:hover .fondo-btn { background: rgba(52, 152, 219, 0.7); }
 
-        .menu-btn { position: absolute; bottom: 20px; left: 20px; width: 50px; }
+        .menu-btn { position: absolute; bottom: 20px; left: 20px; width: 50px; cursor: pointer; }
+
+        /* === ESTILOS DEL SIDEBAR LATERAL === */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 280px;
+            height: 100vh;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            border-left: 2px solid #3498db;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.8);
+            transition: right 0.4s ease-in-out;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 25px 20px;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        .sidebar.activo {
+            right: 0;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(52, 152, 219, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .sidebar-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #3498db;
+            letter-spacing: 1px;
+        }
+
+        .btn-cerrar-sidebar {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-cerrar-sidebar:hover {
+            color: #3498db;
+        }
+
+        .sidebar-links {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+
+        .sidebar-links li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-links a, .sidebar-links select {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            transition: 0.3s;
+            font-size: 0.95rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .sidebar-links select {
+            cursor: pointer;
+            outline: none;
+        }
+
+        .sidebar-links select option {
+            background: #0a192f;
+            color: white;
+        }
+
+        .sidebar-links a:hover {
+            background: rgba(52, 152, 219, 0.2);
+            border-color: #3498db;
+            transform: translateX(5px);
+        }
+
+        .sidebar-footer {
+            border-top: 1px solid rgba(52, 152, 219, 0.3);
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #3498db;
+            object-fit: cover;
+        }
+
+        .user-details .user-name {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .user-details .user-plan {
+            font-size: 0.75rem;
+            color: #3498db;
+        }
+
+        .btn-logout {
+            background: rgba(231, 76, 60, 0.2);
+            border: 1px solid #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            display: block;
+        }
+
+        .btn-logout:hover {
+            background: rgba(231, 76, 60, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -66,32 +210,94 @@
         <a href="BLINDAJE TOTAL.html">
             <img src="assets/logo-blindaje.png" class="logo-esquina logo-blindaje" alt="Blindaje Total">
         </a>
-        <img src="assets/logo-IRONVAULT.png" class="logo-esquina logo-ironvault" alt="IronVault">
+        <img src="assets/logo-IRONVAULT.png" id="btn-toggle-sidebar" class="logo-esquina logo-ironvault" alt="IronVault">
 
         <div class="botones-container">
-            <a href="Tienda.html" class="btn btn-peque">
-                <img src="assets/icon-tienda.png">
-                <div class="fondo-btn">TIENDA</div>
-            </a>
+            <!-- Mis Bóvedas (Grande) -->
             
-            <a href="#" class="btn btn-grande">
-                <img src="assets/icon-boveda.png">
-                <div class="fondo-btn">MIS BÓVEDAS</div>
-            </a>
+     <a href="boveda.html" class="btn btn-grande">
+    <img src="assets/icon-boveda.png">
+    <div class="fondo-btn">MIS BÓVEDAS</div>
+     </a>
             
-            <a href="#" class="btn btn-grande">
-                <img src="assets/icon-caja.png">
-                <div class="fondo-btn">MI CAJA VIRTUAL</div>
-            </a>
-            
-            <a href="#" class="btn btn-peque">
-                <img src="assets/icon-config.png">
-                <div class="fondo-btn">CONFIG</div>
-            </a>
+            <!-- Mi Caja Virtual (Grande) -->
+ <a href="caja_virtual.html" class="btn btn-grande">
+    <img src="assets/icon-caja.png">
+    <div class="fondo-btn">MI CAJA VIRTUAL</div>
+</a>
         </div>
         
         <img src="assets/menu.png" class="menu-btn" alt="Menú">
     </div>
+
+    <!-- SIDEBAR LATERAL -->
+    <div id="sidebarMenu" class="sidebar">
+        <div>
+            <div class="sidebar-header">
+                <h3>IRONVAULT MENU</h3>
+                <button id="btnCerrarSidebar" class="btn-cerrar-sidebar">&times;</button>
+            </div>
+            
+            <ul class="sidebar-links">
+                <!-- Opción de Tienda -->
+                <li>
+                    <a href="Tienda.html">
+                        🛒 Tienda
+                    </a>
+                </li>
+                <!-- Opción de Nuestra Empresa -->
+                <li>
+                    <a href="BLINDAJE TOTAL.html">
+                        🏢 Nuestra empresa
+                    </a>
+                </li>
+                <!-- Opción de Idioma -->
+                <li>
+                    <select id="selectIdioma">
+                        <option value="es">🌐 Idioma: Español</option>
+                        <option value="en">🌐 Language: English</option>
+                    </select>
+                </li>
+                <!-- Opción de Borrar Cajas -->
+                <li>
+                    <a href="#" id="btnBorrarCajas">
+                        🗑️ Borrar Cajas
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <img src="assets/icon-config.png" alt="Avatar" class="user-avatar">
+                <div class="user-details">
+                    <div class="user-name">Usuario IronVault</div>
+                    <div class="user-plan">Cuenta Segura</div>
+                </div>
+            </div>
+            <a href="login.html" class="btn-logout">Cerrar Sesión</a>
+        </div>
+    </div>
+
+    <script>
+        const btnToggle = document.getElementById('btn-toggle-sidebar');
+        const sidebar = document.getElementById('sidebarMenu');
+        const btnCerrar = document.getElementById('btnCerrarSidebar');
+
+        btnToggle.addEventListener('click', () => {
+            sidebar.classList.add('activo');
+        });
+
+        btnCerrar.addEventListener('click', () => {
+            sidebar.classList.remove('activo');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!sidebar.contains(event.target) && !btnToggle.contains(event.target)) {
+                sidebar.classList.remove('activo');
+            }
+        });
+    </script>
 
 </body>
 </html>
